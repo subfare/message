@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Send Anything</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send anything</title>
     <style>
         body {
             margin: 0;
@@ -20,7 +19,7 @@
 
         h1 {
             margin: 0;
-            font-size: 32px; /* Adjusted font size for smaller screens */
+            font-size: 48px;
             font-weight: normal;
             color: #FFFFFF;
         }
@@ -30,18 +29,23 @@
             color: #9400D3;
         }
 
+        .subheader {
+            font-size: 24px;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+
         .textbox {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 0; /* Adjusted padding for smaller screens */
+            padding: 30px 0;
         }
 
         textarea {
-            width: 90%; /* Adjusted width for smaller screens */
-            max-width: 400px;
-            height: 150px; /* Adjusted height for smaller screens */
-            font-size: 16px; /* Adjusted font size for smaller screens */
+            width: 400px;
+            height: 200px;
+            font-size: 18px;
             border-radius: 5px;
             border: 2px solid #777777;
             padding: 10px;
@@ -51,7 +55,7 @@
 
         button {
             margin-top: 20px;
-            font-size: 20px; /* Adjusted font size for smaller screens */
+            font-size: 24px;
             font-weight: bold;
             color: #FFFFFF;
             background-color: #9400D3;
@@ -66,7 +70,7 @@
         }
 
         .made-by {
-            font-size: 14px; /* Adjusted font size for smaller screens */
+            font-size: 18px;
             color: #FFFFFF;
             margin-top: 20px;
             text-align: center;
@@ -79,15 +83,15 @@
 </head>
 <body>
     <div class="header">
-        <h1>Secret <span>Message</span></h1>
+        <h1>secret <span>message</span></h1>
     </div>
 
     <div class="textbox">
-        <textarea id="message" placeholder="Type anything down below and it'll be sent to my inbox. Only I can see it."></textarea>
-        <button id="sendButton" onclick="send()">Send Your Message</button>
+        <textarea id="message" placeholder="type anything down below and it'll be sent to my inbox, only i can see it"></textarea>
+        <button id="sendButton" onclick="send()">send ur message</button>
     </div>
 
-    <p class="made-by">Made by <span>@subfare</span></p>
+    <p class="made-by">made by <span>@subfare</span></p>
 
     <script>
         function send() {
@@ -95,7 +99,7 @@
             var webhookUrl = "https://discord.com/api/webhooks/1242165233435279480/4IYJzSElwU9eIp4L5gvgKD8nv50f__mRKImuVBzp_UaD5piSsbC2k0DfkdQTztZO2vKu";
             var sendButton = document.getElementById("sendButton");
 
-            // Disable the button to prevent multiple clicks
+            // disable the button to prevent multiple clicks
             sendButton.disabled = true;
 
             var xhr = new XMLHttpRequest();
@@ -103,7 +107,7 @@
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify({"content": message}));
 
-            // Enable the button after 5 seconds
+            // enable the button after 5 seconds
             setTimeout(function() {
                 sendButton.disabled = false;
             }, 5000);
